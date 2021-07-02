@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SPARQL Sample</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script type="text/javascript" src="Untitled-8.js" charset="UTF-8"></script>
+<script>
+<!-- // 
+
+$(window).load(function() {
+
+	$('#find_query').click(function(){
+
+		var endpoint = "https://query.wikidata.org/sparql";
+
+//ここに置き換え処理を入れる
+		//var text ="";
+		/*if(document.getElementById('disList')!=null){
+			text = document.getElementById('disList').value;
+			}text = $('#disList').val();
+			alert(text);*/
+
+		const input = document.form1.disLsit;
+		const text = input.selectedIndex;
+		const str = input.options[text].value;
+
+
+
+	qr = sendQuery(
+		endpoint
+		,$('#query_area').val().replace(/[\n\r]/g,"").replace('#INPUT#' ,str).replace('#OUTPUT#' ,str)
+
+	);
+	qr.fail(
+		function (xhr, textStatus, thrownError) {
+			alert("Error: A '" + textStatus+ "' occurred.");
+		}
+	);
+	qr.done(
+		function (d) {
+			result_table(d.results.bindings);
+		}
+	);
+
+
+	});
+
+	$('#result_div').hide();
+
+
+});
+
+
+//結果表示用の関数
+function result_table(data){
+	 var result_div = $('#result_div');
+
+	var table = $('#result_list')[0];
+
+
+	if (table == undefined) {
+		result_div.append($('<table border="1"></table>').attr({
+			'id' : 'result_list',
+			'class' : 'table'
+		}));
+		table = $('#result_list')[0];
+	}
+
+	while (table.rows.length > 0) {
+		table.deleteRow(0); // 行を追加
+	}
+
+	if (data instanceof Array) {
+		result_div.show();
+		// ヘッダ
+		var header = table.createTHead(); // 行を追加
+		var headerRow = header.insertRow(0);
+
+		id = 1;
+		for (var d = 0; d < data.length; d++) {
+			var row1 = table.insertRow(d + 1); // 行を追加
+
+			if (d == 0) {
+				var th1 = document.createElement('th');
+				th1.innerHTML = '項目名';
+				headerRow.appendChild(th1);
+				var th2 = document.createElement('th');
+				th2.innerHTML = '値';
+				headerRow.appendChild(th2);
+			}
+
+			var cell1 = row1.insertCell(0)
+			cell1.innerHTML = data[d]['propLabel'].value;
+				
+			var cell2 = row1.insertCell(1)
+			cell2.innerHTML = '<a href="'+data[d]['o'].value+'" target="_blank">'
+								+ data[d]['oLabel'].value + '</a>';
+			
+	/*
+		
+			if (d == 0) {
+				for ( var key in data[0]) {
+					var th = document.createElement('th');
+					var label = key;
+					th.innerHTML = key;
+					headerRow.appendChild(th);
+				}
+			}
+			
+			var i = 0;
+			for ( var key in data[d]) {
+								var cell = row1.insertCell(i++); // ２つ目以降のセルを追加
+				var value = data[d][key];
+				if (value.value != undefined){
+					value = value.value;
+				}
+				if (value == null) {
+					value = '';
+				}
+	
+				var link = true;
+				var value2 =value.substring(30);
+				if (link) {
+					if (value != null && value.indexOf("http://") == 0) {
+						value = '<a href="'+value2+'" target="_blank">'
+								+ value2 + '</a>';
+					}
+				}
+				else{
+					var value2 =value.substring(30);
+					if (link) {
+						if (value != null && value.indexOf("http://") == 0) {
+							value = '<a href="'+value+'" target="_blank">'
+									+ value2 + '</a>';
+						}
+					}
+				}
+				
+				cell.innerHTML = value;
+			}*/
+		}
+	}
+};
+
+
+// -->
+</script>
+	
+<style>
+.none {
+	display: none;
+}
+</style>	
+	
+</head>
+<body>
+
+
+<div id="container">
+	<div id="header">
+	<h2 style="background-color: #99cc00">疾患情報抽出システム</h2>
+	</div>
+
+	<div id="right" class="right">
+		<div>
+		</div>
+		<div class="center-item">
+			<label>疾患：<div id="suggest" style="display:none;"></div>
+				
+				<form name="form1">
+				 <select id="disLsit">
+					<option value="wd:Q84263196">新型コロナウイルス感染症</option>
+					<option value="wd:Q29496">肺炎</option>
+					<option value="wd:Q1209150">脳梗塞</option>
+					<option value="wd:Q12202">脳卒中</option>
+					<option value="wd:Q11081">アルツハイマー病</option>
+					<option value="wd:Q2840">インフルエンザ</option>
+					<option value="wd:Q12125">風邪</option>
+					<option value=""></option>
+					<option value=""></option>
+					<option value=""></option>
+					<option value=""></option>
+					<option value=""></option>
+					<option value=""></option>
+					<option value=""></option>
+					<option value=""></option>
+					<option value=""></option>
+					<option value=""></option>
+					<option value=""></option>
+					<option value=""></option>
+				</select>
+				</form>
+		
+			   </div>について</label>
+			
+		</div>
+		<div class="center-item" >
+		<textarea class="none" id="query_area" cols="100" rows="10">
+select distinct ?propLabel ?o ?oLabel  
+where{
+{#INPUT# wdt:P2176 ?o .
+?prop wikibase:directClaim wdt:P2176.
+}
+UNION
+{#OUTPUT# wdt:P780 ?o .
+?prop wikibase:directClaim wdt:P780.
+}
+SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". } 
+}ORDER BY ?propLabel
+</textarea>
+			<input type="button" id="find_query" value="query"/>
+		</div>
+	
+		<!-- 結果ペイン -->
+		<div id="result_div" class="table_parent">
+		</div>
+	</div>
+
+</div>
+</body>
+</html>
