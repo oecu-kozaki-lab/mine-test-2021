@@ -29,9 +29,9 @@ public class rist1 {
 		
 		//入力ファイル指定
 		File file = new File("input/words.txt");
+		
 		//ファイルの読み込み用のReaderの設定
 		BufferedReader br = new BufferedReader(	new InputStreamReader(new FileInputStream(file)));
-		
 		
 		
 		
@@ -40,12 +40,16 @@ public class rist1 {
 				String line = br.readLine(); //ファイルを1行ずつ読み込む
 				System.out.println(line);
 
+				
 			//クエリの作成
 			String queryStr = "PREFIX dbpj: <http://ja.dbpedia.org/resource/>\r\n"
 					+ "PREFIX dbp-owl: <http://dbpedia.org/ontology/>PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\r\n"
-					+"SELECT DISTINCT ?p WHERE { <http://ja.dbpedia.org/resource/\""+line+"\"> ?p ?o . } ";
+					+"SELECT DISTINCT ?p WHERE { <http://ja.dbpedia.org/resource/"+line+"> ?p ?o . } ";
+			System.out.println(queryStr);
 			Query query = QueryFactory.create(queryStr);
 
+			
+			
 /*List<String> list = new ArrayList<String>();
 			
 			//リストに要素を追加 
