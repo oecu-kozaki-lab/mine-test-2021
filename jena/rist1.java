@@ -50,21 +50,7 @@ public class rist1 {
 
 			
 			
-/*List<String> list = new ArrayList<String>();
-			
-			//リストに要素を追加 
-			list.add("白血病"); 
-			list.add("新型コロナウイルス感染症(2019)"); 
-      
-			
-      // Iterator 
-     // System.out.println("Iterator-----------"); 
-      
-      for (Iterator<String> it = list.iterator(); it.hasNext();) { 
-			  System.out.println(it.next());
-			   
-      }*/
-      
+
       
 			 // Remote execution.
 			try{
@@ -82,17 +68,20 @@ public class rist1 {
 			    // 結果の出力　※以下のどれか「１つ」を選ぶ（複数選ぶと，2つ目以降の結果が「空」になる）
 			 	//ResultSetFormatter.out(System.out, rs, query);		//表形式で，標準出力に
 			 	//ResultSetFormatter.out(out, rs, query); 			//表形式で，ファイルに
-			 	//ResultSetFormatter.outputAsCSV(System.out, rs);	//CSV形式で，標準出力に
-			 	ResultSetFormatter.outputAsCSV(out, rs);			//CSV形式で，ファイルに
+			 	ResultSetFormatter.outputAsCSV(System.out, rs);	//CSV形式で，標準出力に
+			 	//ResultSetFormatter.outputAsCSV(out, rs);			//CSV形式で，ファイルに
 
-			 	br.close();
 			 	
+			 	qexec.close();
 			 	out.close();
 
 			} catch (Exception e) {
 			    e.printStackTrace();
 			}
 }
+			br.close();
+			
+		 	
 		} catch (IOException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
