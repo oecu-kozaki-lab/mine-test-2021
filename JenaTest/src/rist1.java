@@ -65,7 +65,15 @@ public class rist1 {
 
 				// クエリの実行.
 			    ResultSet rs = qexec.execSelect();
-			 
+			
+			 while(rs.hasNext()){
+					QuerySolution qs = rs.nest();
+					String vars = rs.getResultVars();
+					while(int i=0; i<vars.size();i++){
+						RDFNode node = qs.get(vars.get(i));
+						Ststem.out.println(node.toString());
+					}
+				}
 
 			    // 結果の出力　※以下のどれか「１つ」を選ぶ（複数選ぶと，2つ目以降の結果が「空」になる）
 			 	//ResultSetFormatter.out(System.out, rs, query);		//表形式で，標準出力に
