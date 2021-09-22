@@ -41,6 +41,7 @@ public class rist1 {
 				System.out.println(line);
 
 				
+				
 			//クエリの作成
 			String queryStr = "PREFIX dbpj: <http://ja.dbpedia.org/resource/>\r\n"
 					+ "PREFIX dbp-owl: <http://dbpedia.org/ontology/>PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\r\n"
@@ -54,6 +55,7 @@ public class rist1 {
       
 			 // Remote execution.
 			try{
+				
 				QueryExecution qexec = QueryExecutionFactory.sparqlService("http://ja.dbpedia.org/sparql"	, query) ;
 			    ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
 
@@ -68,17 +70,18 @@ public class rist1 {
 			    // 結果の出力　※以下のどれか「１つ」を選ぶ（複数選ぶと，2つ目以降の結果が「空」になる）
 			 	//ResultSetFormatter.out(System.out, rs, query);		//表形式で，標準出力に
 			 	//ResultSetFormatter.out(out, rs, query); 			//表形式で，ファイルに
-			 	ResultSetFormatter.outputAsCSV(System.out, rs);	//CSV形式で，標準出力に
-			 	//ResultSetFormatter.outputAsCSV(out, rs);			//CSV形式で，ファイルに
+			 	//ResultSetFormatter.outputAsCSV(System.out, rs);	//CSV形式で，標準出力に
+			 	ResultSetFormatter.outputAsCSV(out, rs);			//CSV形式で，ファイルに
 
 			 	
 			 	qexec.close();
 			 	out.close();
-
+			 	
 			} catch (Exception e) {
 			    e.printStackTrace();
 			}
-}
+				}
+				
 			br.close();
 			
 		 	
