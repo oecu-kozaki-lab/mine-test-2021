@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.List;
 
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
@@ -18,6 +16,9 @@ import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
 
+import com.github.andrewoma.dexx.collection.ArrayList;
+import com.github.andrewoma.dexx.collection.List;
+
 /* SPARQL Endpoint に対するクエリ例
  * 注）Proxyの設定が必要な環境で実行するときは，実行時のJVMのオプションとして
  *      -DproxySet=true -DproxyHost=wwwproxy.osakac.ac.jp -DproxyPort=8080
@@ -26,7 +27,7 @@ import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
  * /
  */
 
-public class rist1 {
+public class mine {
 
 	static public void main(String[] args) throws FileNotFoundException{
 		
@@ -39,9 +40,19 @@ public class rist1 {
 		
 		
 		try {
+			
 			while(br.ready()) {
 				String line = br.readLine(); //ファイルを1行ずつ読み込む
 				System.out.println(line);
+				
+			List<String> propList = new ArrayList<String>();
+				List<Stiring>[] disPorp = new ArrayList<Stiring>[rs.getRowNumber()] ;
+				//String[][];
+
+			
+			List<String> ListDip = new ArrayList<String>();
+			List<String> ListAll=new ArrayList<String>();
+			
 
 				
 				
@@ -58,7 +69,8 @@ public class rist1 {
       
 			 // Remote execution.
 			try{
-				
+				//List<String> ListDip = new ArrayList<String>();
+				//List<String> ListAll = new ArrayList<String>();
 				
 				QueryExecution qexec = QueryExecutionFactory.sparqlService("http://ja.dbpedia.org/sparql"	, query) ;
 			    ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
@@ -69,19 +81,30 @@ public class rist1 {
 
 				// クエリの実行.
 			    ResultSet rs = qexec.execSelect();
-			
-			 while(rs.hasNext()){
+				
+				
+				while(rs.hasNext()){
+					
 					QuerySolution qs = rs.next();
 					List<String> vars = rs.getResultVars();
 					for(int i=0; i<vars.size();i++){
 						RDFNode node = qs.get(vars.get(i));
 						System.out.println(node.toString());
-						
-						
-					}
-				}
+					
 
+					String prop = node.toString();
+					
+					if(!ListAll.contains(prop)){
+						ListAll.add(prop);
+					} 
+
+					disProp[i].add(prop);
+
+				
+					//}
+				}
 			 
+
 			    // 結果の出力　※以下のどれか「１つ」を選ぶ（複数選ぶと，2つ目以降の結果が「空」になる）
 			 	//ResultSetFormatter.out(System.out, rs, query);		//表形式で，標準出力に
 			 	//ResultSetFormatter.out(out, rs, query); 			//表形式で，ファイルに
@@ -106,3 +129,10 @@ public class rist1 {
 		}
 }
 }
+
+
+
+
+
+
+

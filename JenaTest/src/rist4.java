@@ -26,7 +26,7 @@ import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
  * /
  */
 
-public class rist1 {
+public class rist4 {
 
 	static public void main(String[] args) throws FileNotFoundException{
 		
@@ -59,7 +59,6 @@ public class rist1 {
 			 // Remote execution.
 			try{
 				
-				
 				QueryExecution qexec = QueryExecutionFactory.sparqlService("http://ja.dbpedia.org/sparql"	, query) ;
 			    ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
 
@@ -76,12 +75,9 @@ public class rist1 {
 					for(int i=0; i<vars.size();i++){
 						RDFNode node = qs.get(vars.get(i));
 						System.out.println(node.toString());
-						
-						
 					}
 				}
 
-			 
 			    // 結果の出力　※以下のどれか「１つ」を選ぶ（複数選ぶと，2つ目以降の結果が「空」になる）
 			 	//ResultSetFormatter.out(System.out, rs, query);		//表形式で，標準出力に
 			 	//ResultSetFormatter.out(out, rs, query); 			//表形式で，ファイルに
