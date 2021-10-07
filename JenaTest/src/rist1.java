@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.List;
+import java.util.ArrayList;
 
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
@@ -43,7 +43,7 @@ public class rist1 {
 				String line = br.readLine(); //ファイルを1行ずつ読み込む
 				System.out.println(line);
 
-				
+				ArrayList<String> ListAll=new ArrayList<String>();
 				
 			//クエリの作成
 			String queryStr = "PREFIX dbpj: <http://ja.dbpedia.org/resource/>\r\n"
@@ -72,13 +72,15 @@ public class rist1 {
 			
 			 while(rs.hasNext()){
 					QuerySolution qs = rs.next();
-					List<String> vars = rs.getResultVars();
-					for(int i=0; i<vars.size();i++){
-						RDFNode node = qs.get(vars.get(i));
+					//List<String> vars = rs.getResultVars();
+					//for(int i=0; i<vars.size();i++){
+						//RDFNode node = qs.get(vars.get(i));
+						RDFNode node = qs.get("p");
 						System.out.println(node.toString());
 						
-						
-					}
+						if(ListAll.contains("p")){
+							   ListAll.add("p");}
+					//}
 				}
 
 			 
