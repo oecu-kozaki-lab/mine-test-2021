@@ -37,7 +37,7 @@ public class minever2 {
 	static public void main(String[] args) throws FileNotFoundException{
 		
 		//入力ファイル指定
-		File file = new File("input/words.txt");
+		File file = new File("input/words-2.txt");
 		
 		//ファイルの読み込み用のReaderの設定
 		BufferedReader br = new BufferedReader(	new InputStreamReader(new FileInputStream(file)));
@@ -49,8 +49,7 @@ public class minever2 {
 		ArrayList<String> ListAll=new ArrayList<String>();
 		
 		  //出力用のファイルの作成
-		  FileOutputStream out ;
-		  out= new FileOutputStream("output/rist1-output.csv");
+		  FileOutputStream out= new FileOutputStream("output/rist1-output.csv");
 		  
 		
 		  
@@ -68,7 +67,7 @@ public class minever2 {
 			String queryStr = "PREFIX dbpj: <http://ja.dbpedia.org/resource/>\r\n"
 					+ "PREFIX dbp-owl: <http://dbpedia.org/ontology/>PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\r\n"
 					+"SELECT DISTINCT ?p WHERE { <http://ja.dbpedia.org/resource/"+line+"> ?p ?o . } ";
-			System.out.println(queryStr);
+			//System.out.println(queryStr);
 			Query query = QueryFactory.create(queryStr);
 			
 			 // Remote execution.
@@ -98,7 +97,7 @@ public class minever2 {
 						//各疾患がもつPのリスト
 						ListDip1.add(node.toString());
 						
-						System.out.println(node.toString());
+						//System.out.println(node.toString());
 						
 					
 					//String prop = node.toString();
@@ -106,6 +105,7 @@ public class minever2 {
 						//Pが含まれていないときに追加する
 					//if(!ListAll.contains(node.toString())){
 					   ListAll.add(node.toString());
+					   
 					//} 
 				
 					//disProp[i].add(prop);
@@ -159,8 +159,8 @@ public class minever2 {
 			
 			 
 			//リスト内のデータ確認用
-			System.out.println(ListDip);
-			System.out.println(ListAll);
+			//System.out.println(ListDip);
+			//System.out.println(ListAll);
 			//hashmap利用？
 			
 			//ArrayList<String> ListDip2=new ArrayList<String>();
@@ -171,6 +171,7 @@ public class minever2 {
 			}
 			
 		    //map stream利用？
+		     * 
 			List<String> deepList =new ArrayList<String>(ListDip);
 			System.out.println("ディープコピーしたリスト");
             for (int i : deepList){System.out.println(i);}*/
@@ -179,7 +180,13 @@ public class minever2 {
 				    .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 				System.out.println(counts);
 			
-			
+			/*	File file2 = new File("output/test2.txt");
+				  FileWriter filewriter = new FileWriter(file2);
+
+				  filewriter.println(counts);
+
+			/*	  filewriter.close();
+				
 			/* int count = 0;
 		        int size = ListDip.size();
 		        for( int i = 0; i < size; i++ )
