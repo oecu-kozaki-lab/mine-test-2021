@@ -64,6 +64,7 @@ public class minever2 {
 				//String[][];
 				
 			//クエリの作成
+			//dbpedia jp
 			String queryStr = "PREFIX dbpj: <http://ja.dbpedia.org/resource/>\r\n"
 					+ "PREFIX dbp-owl: <http://dbpedia.org/ontology/>PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\r\n"
 					+"SELECT DISTINCT ?p WHERE { <http://ja.dbpedia.org/resource/"+line+"> ?p ?o . } ";
@@ -97,7 +98,7 @@ public class minever2 {
 						//各疾患がもつPのリスト
 						ListDip1.add(node.toString());
 						
-						//System.out.println(node.toString());
+						System.out.println(node.toString());
 						
 					
 					//String prop = node.toString();
