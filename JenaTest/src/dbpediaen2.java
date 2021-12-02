@@ -37,7 +37,7 @@ public class dbpediaen2{
 	static public void main(String[] args) throws FileNotFoundException{
 		
 		//入力ファイル指定
-		File file = new File("input/dbpediaen.txt");
+		File file = new File("input/dbpediaen3.txt");
 		
 		//ファイルの読み込み用のReaderの設定
 		BufferedReader br = new BufferedReader(	new InputStreamReader(new FileInputStream(file)));
@@ -101,7 +101,7 @@ public class dbpediaen2{
 						//各疾患がもつPのリスト
 						ListDip1.add(node.toString());
 						
-						System.out.println(node.toString());
+						//System.out.println(node.toString());
 						
 					
 					//String prop = node.toString();

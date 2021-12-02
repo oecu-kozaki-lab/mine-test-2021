@@ -20,7 +20,7 @@ public class searchRDFusingSPARQL {
 		Model model = ModelFactory.createDefaultModel() ;
 
 
-		File file = new File("input/DancingMen.ttl");//読み込むRDFファイルを指定
+		File file = new File("input/labels_lang=en.ttl");//読み込むRDFファイルを指定
 		System.out.println(file.getName()+"...");
 
 

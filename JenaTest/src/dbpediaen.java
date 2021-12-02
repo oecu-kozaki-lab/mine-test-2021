@@ -51,7 +51,7 @@ public class dbpediaen {
 		  //出力用のファイルの作成
 		  FileOutputStream out= new FileOutputStream("output/rist1dben-output.csv");
 		  
-		  ArrayList<String> ListAll2=new ArrayList<String>();
+		  //ArrayList<String> ListAll2=new ArrayList<String>();
 		  
 		try {
 			
