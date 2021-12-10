@@ -20,7 +20,7 @@ public class searchRDFusingSPARQL {
 		Model model = ModelFactory.createDefaultModel() ;
 
 
-		File file = new File("input/labels_lang=en.ttl");//読み込むRDFファイルを指定
+		File file = new File("input/infobox-properties_lang=en.ttl");//読み込むRDFファイルを指定
 		System.out.println(file.getName()+"...");
 
 
@@ -37,7 +37,7 @@ public class searchRDFusingSPARQL {
  * */
 
 		//クエリの作成
-		String queryStr = "select * where{?s ?p ?o.}LIMIT 100";
+		String queryStr = "select ?p where{?s ?p <http://dbpedia.org/resource/Airport_malaria>.}LIMIT 100";
         Query query = QueryFactory.create(queryStr);
 
         //クエリの実行

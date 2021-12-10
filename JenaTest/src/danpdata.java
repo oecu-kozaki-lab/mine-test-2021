@@ -1,7 +1,10 @@
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
@@ -18,47 +21,63 @@ public class danpdata {
 			Model model = ModelFactory.createDefaultModel() ;
 
 
-			File file = new File("input/labels_lang=en.ttl");//読み込むRDFファイルを指定
+			File file = new File("input/infobox-properties_lang=en.ttl");//読み込むRDFファイルを指定
 			System.out.println(file.getName()+"...");
 
-
-		//RDFの形式を指定して読み込む
+			//入力ファイル指定
+			File file1 = new File("input/dbpediaen.txt");
+			
+			//ファイルの読み込み用のReaderの設定
+			BufferedReader br = new BufferedReader(	new InputStreamReader(new FileInputStream(file1)));
+			
+	try {
+		while(br.ready()) {
+			String line = br.readLine(); //ファイルを1行ずつ読み込む
+			System.out.println(line);
+					
+			//RDFの形式を指定して読み込む
 //			model.read(file.getAbsolutePath(), "RDF") ;
 //			model.read("input/IOBC_jp_label.nt","N-TRIPLE") ;
-			model.read(file.getAbsolutePath(), "TURTLE") ;
+				model.read(file.getAbsolutePath(), "TURTLE") ;
 
 
-	/*　以下のコードは，
-	 *  　https://github.com/KnowledgeGraphJapan/Apache-Jena-Sample-Programs/tree/master/src/main/java/jp/riken/accc/lod/symposium/sample
-	 * を参考にして実装
+		/*　以下のコードは，
+		 *  　https://github.com/KnowledgeGraphJapan/Apache-Jena-Sample-Programs/tree/master/src/main/java/jp/riken/accc/lod/symposium/sample
+		 * を参考にして実装
 
-	 * */
+		 * */
 
-			//クエリの作成
-			String queryStr = "select ?s where{?s ?p ?o.}LIMIT 100";
-	        Query query = QueryFactory.create(queryStr);
-	        System.out.println(queryStr);
-	        //クエリの実行
-	        QueryExecution qexec = QueryExecutionFactory.create(query, model);
+				//クエリの作成
+				String queryStr = "select ?p where{?s ?p <http://dbpedia.org/resource/"+line+">.}LIMIT 100";
+		        Query query = QueryFactory.create(queryStr);
+		        System.out.println(queryStr);
+		        //クエリの実行
+		        QueryExecution qexec = QueryExecutionFactory.create(query, model);
 
-	     	try {
+		     	try {
 
-	        FileOutputStream out;
-			out = new FileOutputStream("output/SPARQL-output.txt");
+		        FileOutputStream out;
+				out = new FileOutputStream("output/SPARQL-output.txt");
 
-			// クエリの実行.
-	        ResultSet rs = qexec.execSelect();
+				// クエリの実行.
+		        ResultSet rs = qexec.execSelect();
 
-	        // 結果の出力　※以下のどれか「１つ」を選ぶ（複数選ぶと，2つ目以降の結果が「空」になる）
-	     	ResultSetFormatter.out(System.out, rs, query);		//表形式で，標準出力に
-	     	//ResultSetFormatter.out(out, rs, query); 			//表形式で，ファイルに
-	     	//ResultSetFormatter.outputAsCSV(System.out, rs);	//CSV形式で，標準出力に
-	     	//ResultSetFormatter.outputAsCSV(out, rs);			//CSV形式で，ファイルに
+		        // 結果の出力　※以下のどれか「１つ」を選ぶ（複数選ぶと，2つ目以降の結果が「空」になる）
+		     	ResultSetFormatter.out(System.out, rs, query);		//表形式で，標準出力に
+		     	//ResultSetFormatter.out(out, rs, query); 			//表形式で，ファイルに
+		     	//ResultSetFormatter.outputAsCSV(System.out, rs);	//CSV形式で，標準出力に
+		     	//ResultSetFormatter.outputAsCSV(out, rs);			//CSV形式で，ファイルに
 
-				out.close();
-			} catch (IOException e) {
-				e.printStackTrace();
+		     	br.close();
+					out.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
 			}
-
-		}
-}
+	} 
+	catch (IOException e) {
+		// TODO 自動生成された catch ブロック
+		e.printStackTrace();
+	}
+}}
