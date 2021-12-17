@@ -37,7 +37,7 @@ public class dbpediaen {
 	static public void main(String[] args) throws FileNotFoundException{
 		
 		//入力ファイル指定
-		File file = new File("input/dbpediaen.txt");
+		File file = new File("input/dbpediaen3.txt");
 		
 		//ファイルの読み込み用のReaderの設定
 		BufferedReader br = new BufferedReader(	new InputStreamReader(new FileInputStream(file)));
@@ -79,7 +79,7 @@ public class dbpediaen {
 				//List<String> ListDip = new ArrayList<String>();
 				//List<String> ListAll = new ArrayList<String>();
 				
-				QueryExecution qexec = QueryExecutionFactory.sparqlService("https://dbpedia.org/sparql/"	, query) ;
+				QueryExecution qexec = QueryExecutionFactory.sparqlService(" http://kg.hozo.jp/agraph/dedanpen/"	, query) ;
 			    ((QueryEngineHTTP)qexec).addParam("timeout", "10002") ;
 			  
 				// クエリの実行.

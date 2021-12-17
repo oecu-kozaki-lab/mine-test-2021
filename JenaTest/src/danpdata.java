@@ -26,15 +26,15 @@ public class danpdata {
 
 			//入力ファイル指定
 			File file1 = new File("input/dbpediaen.txt");
-			
+
 			//ファイルの読み込み用のReaderの設定
 			BufferedReader br = new BufferedReader(	new InputStreamReader(new FileInputStream(file1)));
-			
+
 	try {
 		while(br.ready()) {
 			String line = br.readLine(); //ファイルを1行ずつ読み込む
 			System.out.println(line);
-					
+
 			//RDFの形式を指定して読み込む
 //			model.read(file.getAbsolutePath(), "RDF") ;
 //			model.read("input/IOBC_jp_label.nt","N-TRIPLE") ;
@@ -48,7 +48,7 @@ public class danpdata {
 		 * */
 
 				//クエリの作成
-				String queryStr = "select ?p where{?s ?p <http://dbpedia.org/resource/"+line+">.}LIMIT 100";
+				String queryStr = "select ?p where{<http://dbpedia.org/resource/"+line+"> ?p ?o.}LIMIT 100";
 		        Query query = QueryFactory.create(queryStr);
 		        System.out.println(queryStr);
 		        //クエリの実行
@@ -75,7 +75,7 @@ public class danpdata {
 				}
 
 			}
-	} 
+	}
 	catch (IOException e) {
 		// TODO 自動生成された catch ブロック
 		e.printStackTrace();
