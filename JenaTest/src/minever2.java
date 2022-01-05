@@ -110,7 +110,9 @@ public class minever2 {
 					//} 
 				
 					//disProp[i].add(prop);
-				
+					   Map<String, Long> counts =  ListAll.stream()
+							    .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+							System.out.println(counts);
 					//}
 				}
 				  PrintWriter p = new PrintWriter(new BufferedWriter(new OutputStreamWriter(
@@ -177,9 +179,7 @@ public class minever2 {
 			System.out.println("ディープコピーしたリスト");
             for (int i : deepList){System.out.println(i);}*/
 			
-			Map<String, Long> counts =  ListAll.stream()
-				    .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-				System.out.println(counts);
+			
 			
 			/*	File file2 = new File("output/test2.txt");
 				  FileWriter filewriter = new FileWriter(file2);

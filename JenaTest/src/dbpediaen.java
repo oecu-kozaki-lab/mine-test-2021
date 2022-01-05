@@ -25,6 +25,7 @@ import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
 
 
 /* SPARQL Endpoint に対するクエリ例
+ * 
  * 注）Proxyの設定が必要な環境で実行するときは，実行時のJVMのオプションとして
  *      -DproxySet=true -DproxyHost=wwwproxy.osakac.ac.jp -DproxyPort=8080
  *     を追加する，
