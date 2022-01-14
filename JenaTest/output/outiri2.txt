@@ -1,4 +1,6 @@
----------
-| p | o |
-=========
----------
+http://dbpedia.org/property/specialty
+http://dbpedia.org/resource/Infectious_disease_(medical_specialty)
+http://dbpedia.org/property/field
+http://dbpedia.org/resource/Emergency_medicine
+http://dbpedia.org/property/speciality
+http://dbpedia.org/resource/Psychiatry
