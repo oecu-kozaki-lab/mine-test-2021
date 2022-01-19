@@ -67,7 +67,8 @@ public class dbiri2 {
 				out.close();*/
 			}
 			//System.out.println("test");
-			FileOutputStream out2 = new FileOutputStream("output/outiri3.txt");
+			//FileOutputStream out2 = new FileOutputStream("output/outiri3.txt");
+			FileOutputStream out2 = new FileOutputStream("output/outiri3.csv");
 			OutputStreamWriter out2w = new OutputStreamWriter(out2);
 			
 			
