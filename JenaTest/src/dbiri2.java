@@ -38,8 +38,9 @@ public class dbiri2 {
 					+ "PREFIX dbp-owl: <http://dbpedia.org/ontology/>\n"
 					+ "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
 					+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
-					+ "SELECT DISTINCT ?p  ?o WHERE { <http://dbpedia.org/resource/"+line+"> ?p ?o.\n"
-					+ "FILTER isIRI(?o)\n"
+					//+ "SELECT DISTINCT ?p  ?o WHERE { <http://dbpedia.org/resource/"+line+"> ?p ?o.\n"
+					+ "SELECT DISTINCT ?s  ?p WHERE {?s  ?p <http://dbpedia.org/resource/"+line+">.\n"
+					+ "FILTER isIRI(?s)\n"
 					+ " } ";
 			//System.out.println(queryStr);
 			Query query = QueryFactory.create(queryStr);
@@ -68,7 +69,9 @@ public class dbiri2 {
 			}
 			//System.out.println("test");
 			//FileOutputStream out2 = new FileOutputStream("output/outiri3.txt");
-			FileOutputStream out2 = new FileOutputStream("output/outiri3.csv");
+			//FileOutputStream out2 = new FileOutputStream("output/outiri3.csv");
+			//目的語疾患名
+			FileOutputStream out2 = new FileOutputStream("output/outiriolabel3.csv");
 			OutputStreamWriter out2w = new OutputStreamWriter(out2);
 			
 			
