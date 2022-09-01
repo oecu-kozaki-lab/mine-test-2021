@@ -22,12 +22,8 @@ public class byoukidata {
 
 		//入力ファイル指定
 				File file = new File("input/wikidatadben.txt");
-<<<<<<< HEAD
 				//File file = new File("input/wikidatadbentest1.txt");
 				//File file = new File("input/words-2.txt");
-=======
-
->>>>>>> parent of d0dbd54 (6/20 更新)
 				//ファイルの読み込み用のReaderの設定
 				BufferedReader br = new BufferedReader(	new InputStreamReader(new FileInputStream(file)));
 
@@ -43,16 +39,12 @@ public class byoukidata {
 					+ "PREFIX dbp-owl: <http://dbpedia.org/ontology/>\n"
 					+ "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
 					+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
-<<<<<<< HEAD
 					// ?p 取得
 					//+ "SELECT DISTINCT  ?p WHERE { <http://ja.dbpedia.org/resource/"+line+"> ?p ?o.\n"
 					// ?o 取得
 					//+ "SELECT DISTINCT  ?o WHERE { <http://ja.dbpedia.org/resource/"+line+"> ?p ?o.\n"
 					// ?p ?o 取得
 					+ "SELECT DISTINCT  ?p ?o WHERE { <http://dbpedia.org/resource/"+line+"> ?p ?o.\n"
-=======
-					+ "SELECT DISTINCT  ?p WHERE { <http://dbpedia.org/resource/"+line+"> ?p ?o.\n"
->>>>>>> parent of d0dbd54 (6/20 更新)
 					//+ "SELECT DISTINCT ?s  ?p WHERE {?s  ?p <http://dbpedia.org/resource/"+line+">.\n"
 					//+ "FILTER isIRI(?s)\n"
 					+ " } ";
@@ -87,7 +79,6 @@ public class byoukidata {
 			
 			//英語用
 			//目的語疾患名
-<<<<<<< HEAD
 			//FileOutputStream out2 = new FileOutputStream("output/outbyouki1-wikidatadbenPdata.txt");
 			// ?p 取得 テスト
 			//FileOutputStream out2 = new FileOutputStream("output/testoutbyouki1-wikidatadbenPdata.txt");
@@ -117,9 +108,6 @@ public class byoukidata {
 			//FileOutputStream out2 = new FileOutputStream("output/testoutbyouki1-jawikidatadbenOdata.txt");
 			// ?p ?o 取得 テスト
 			//FileOutputStream out2 = new FileOutputStream("output/testoutbyouki1-jawikidatadbenPOdata.txt");
-=======
-			FileOutputStream out2 = new FileOutputStream("output/outbyouki1-wikidatadbenPdata.txt");
->>>>>>> parent of d0dbd54 (6/20 更新)
 			OutputStreamWriter out2w = new OutputStreamWriter(out2);
 			
 			
