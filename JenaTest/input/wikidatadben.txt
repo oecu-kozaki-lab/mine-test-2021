@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 Mental_disorder
 Disease
 Anxiety
@@ -10445,3 +10447,4 @@ Lesbophobia
 Canine_distemper
 Chronic_paroxysmal_hemicrania
 Athymhormic_syndrome
+>>>>>>> parent of d0dbd54 (6/20 更新)

@@ -48,6 +48,7 @@ public class iricount{
 						
 						FileOutputStream out2 = new FileOutputStream("output/outiricount.csv");
 						OutputStreamWriter out2w = new OutputStreamWriter(out2);
+					
 						for(String uri: ListAll) {
 							System.out.print("\t" + uri);
 							System.out.println();
@@ -57,6 +58,7 @@ public class iricount{
 						Map<String, Long> counts =  ListAll.stream()
 							    .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 							System.out.println(counts);
+							
 				}
 						out2w.close();
 						}
