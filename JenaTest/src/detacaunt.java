@@ -16,7 +16,8 @@ public class detacaunt {
 	//File file = new File("input/DBpediakarawikidata.txt");DBpediaからWikidataへのリンク用
 	//File file = new File("input/DBpedia_itiran.txt");//DBpediaの疾患一覧
 	//File file = new File("input/DBpedia_jyuufuku.txt");//DBpedia重複確認用
-	File file = new File("input/Wikidata_DB_jyuufuku_ver2.txt");//wikidataからWikipediaへのリンクとDBの疾患一覧重複確認用
+	File file = new File("input/DBpedia_ID_Wikidata_ID.txt");//DBのWikidataのリンクからwikidataの疾患一覧重複確認用(ID利用)
+	//File file = new File("input/Wikidata_DB_jyuufuku_ver2.txt");//wikidataからWikipediaへのリンクとDBの疾患一覧重複確認用
 	//File file = new File("input/Wikidata_en_jyuufuku.txt");//wikidata重複確認用
 	//File file = new File("input/DB_wikidata_jyuufuku_ver2.txt");//DBのWikidataのリンクからwikidataの疾患一覧重複確認用
 	//File file = new File("output/outbyouki1-wikidatadbenPdata.txt");
