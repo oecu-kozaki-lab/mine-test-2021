@@ -12,11 +12,19 @@ import java.util.ArrayList;
 public class jyuufukukaunnto_ver2 {
 	static public void main (String[] args) throws FileNotFoundException{
 	//入力ファイル指定
-	File DBfile = new File("input/DBpedia_ID_Wikidata_ID.txt");//DBのWikidataのリンクID
+	//File DBfile = new File("input/DBpedia_ID_Wikidata_ID.txt");//DBのWikidataのリンクID
 	//File DBfile = new File("input/DBpedia_ID_Wikidata_ID _test.txt");//DBのWikidataのリンクIDテスト用
+	//File DBfile = new File("input/Wikidata_DB_jyuufuku_ver3.txt");//相互リンク
+	//File DBfile = new File("input/Wikidata_DB_jyuufuku_ver4.txt");//相互リンクiri
+	File DBfile = new File("input/PrimaryTopic_.txt");//PrimaryTopic
+	
 	//入力ファイル指定2
-	File WDfile = new File("input/WikidataID_en.txt");//Wikidatの疾患一覧のID
+	//File WDfile = new File("input/WikidataID_en.txt");//Wikidatの疾患一覧のID
 	//File WDfile = new File("input/WikidataID_en_test.txt");//Wikidatの疾患一覧のIDテスト用
+	//File WDfile = new File("input/sameAS.txt");//相互リンク
+	//File WDfile = new File("input/sameAS_.txt");//相互リンクiri
+	File WDfile = new File("input/WD_wikipedia_link_.txt");//WDからwikipediaへのリンク_整理版
+	
 	//ファイルの読み込み用のReaderの設定ou
 	BufferedReader DBdata = new BufferedReader(	new InputStreamReader(new FileInputStream(DBfile)));
 	//ファイルの読み込み用のReaderの設定ou
@@ -48,8 +56,11 @@ public class jyuufukukaunnto_ver2 {
 	//DBpediaの疾患のリンク先がWikidataの疾患リストに含まれるかチェック
 		try {
 			  // FileWriterクラスのオブジェクトを生成する
-            FileWriter file = new FileWriter("output/jyuusukukaunnto_ver2.csv");
+            //FileWriter file = new FileWriter("output/jyuusukukaunnto_ver2.csv");
             //FileWriter file = new FileWriter("output/jyuusukukaunnto_ver2test.csv");//テスト用
+            //FileWriter file = new FileWriter("output/sameAS.csv");
+            FileWriter file = new FileWriter("output/PrimaryTopic_.csv");//PrimaryTopic
+            
             // PrintWriterクラスのオブジェクトを生成する
             PrintWriter pw = new PrintWriter(new BufferedWriter(file));
 			while(DBdata.ready()) {
