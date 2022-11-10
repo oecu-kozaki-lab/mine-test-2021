@@ -70,11 +70,11 @@ public class jyuufukukaunnto_ver2 {
 //			String[] searchTargets = {line2};
 
 			      if (ListAll.contains(line)) {
-			        System.out.println(line+"\t"+ ":1");
-			        pw.println(line+ ":1");
+			        System.out.println(line+ ":1");
+			        pw.println(line+ "\t"+ ":1");
 			      } else {
 			        System.out.println(line+"\t"+ ":0");
-			        pw.println(line+ ":0");
+			        pw.println(line+"\t"+ ":0");
 			      }
 			}
 				DBdata.close();
