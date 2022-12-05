@@ -38,8 +38,8 @@ public class sampel1 {
 	        ResultSet rs = qexec.execSelect();
 
 	        // 結果の出力　※以下のどれか「１つ」を選ぶ（複数選ぶと，2つ目以降の結果が「空」になる）
-	     	//ResultSetFormatter.out(System.out, rs, query);		//表形式で，標準出力に
-	     	ResultSetFormatter.out(out, rs, query); 			//表形式で，ファイルに
+	     	ResultSetFormatter.out(System.out, rs, query);		//表形式で，標準出力に
+	     	//ResultSetFormatter.out(out, rs, query); 			//表形式で，ファイルに
 	     	//ResultSetFormatter.outputAsCSV(System.out, rs);	//CSV形式で，標準出力に
 	     	//ResultSetFormatter.outputAsCSV(out, rs);			//CSV形式で，ファイルに
 

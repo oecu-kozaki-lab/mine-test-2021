@@ -20,8 +20,8 @@ import java.util.ArrayList;
 		//File DBfile = new File("input2/WD_itiran.txt");//WDの疾患一覧
 		//File DBfile = new File("input2/DB_topic_WD.txt");//DB→Topic→WD
 		//File DBfile = new File("input2/DB_itiran_.txt");//DBのtopic_付き
-		File DBfile = new File("input2/WD_wikip_DB_.txt");//WD→wikip→DB_付き
-		
+		//File DBfile = new File("input2/WD_wikip_DB_.txt");//WD→wikip→DB_付き
+		File DBfile = new File("input2/DB.txt");//DBPの疾患一覧
 		//入力ファイル指定2
 		//File WDfile = new File("input/WD_wikipedia_link_.txt");//WDからwikipediaへのリンク_整理版
 		//File WDfile = new File("input/PrimaryTopic_.txt");//PrimaryTopic
@@ -29,7 +29,9 @@ import java.util.ArrayList;
 		//File WDfile = new File("input2/DB_itiran.txt");//DBのTopic
 		//File WDfile = new File("input2/WD_wikip_DB.txt");//WD→wikip→DB
 		//File WDfile = new File("input2/wikipedia.txt");//wikipリンク
-		File WDfile = new File("input2/DB_topic.txt");//wikipリンク
+		//File WDfile = new File("input2/DB_topic.txt");//wikipリンク
+		//File WDfile = new File("input2/sougo.txt");//wikipリンク
+		File WDfile = new File("input2/DB_itiran-.txt");//DBのtopic_付き
 		
 		//ファイルの読み込み用のReaderの設定ou
 		BufferedReader DBdata = new BufferedReader(	new InputStreamReader(new FileInputStream(DBfile)));
@@ -69,7 +71,10 @@ import java.util.ArrayList;
 	            //FileWriter file = new FileWriter("output2/sougo.csv");//WDの疾患一覧とTopic
 	            //FileWriter file = new FileWriter("output2/sougolink2.csv");//相互リンク
 	            //FileWriter file = new FileWriter("output2/sougotopic.csv");//WDのwikipediaとTopic
-	            FileWriter file = new FileWriter("output2/sougotopic2.csv");//WDのwikipediaとTopic
+	            //FileWriter file = new FileWriter("output2/sougotopic2.csv");//WDのwikipediaとTopic
+	            //FileWriter file = new FileWriter("output2/sougoWD.csv");//WDとの相互
+				FileWriter file = new FileWriter("output2/DB-topic.csv");//WDとの相互
+	            //FileWriter file = new FileWriter("output2/sougoDB.csv");//WDとの相互
 	            // PrintWriterクラスのオブジェクトを生成する
 	            PrintWriter pw = new PrintWriter(new BufferedWriter(file));
 				while(DBdata.ready()) {
