@@ -1,1 +1,6 @@
-http://www.wikidata.org/entity/Q4729899,http://www.wikidata.org/entity/Q134556,single@en,All You Need Is Blood@en
+http://www.wikidata.org/entity/Q2475925,http://www.wikidata.org/entity/Q45382,coup d'état@en,1963 Syrian coup d'état@en
+http://www.wikidata.org/entity/Q952318,http://www.wikidata.org/entity/Q27020041,sports season@en,1965–66 British Home Championship@en
+http://www.wikidata.org/entity/Q768155,http://www.wikidata.org/entity/Q3588250,ethnic riot@en,1967 Detroit riot@en
+http://www.wikidata.org/entity/Q15402066,http://www.wikidata.org/entity/Q744913,aviation accident@en,1968 Kham Duc C-130 shootdown@en
+http://www.wikidata.org/entity/Q4580026,http://www.wikidata.org/entity/Q124757,riot@en,1981 Toxteth riots@en
+http://www.wikidata.org/entity/Q4581086,http://www.wikidata.org/entity/Q182878,dust storm@en,1983 Melbourne dust storm@en

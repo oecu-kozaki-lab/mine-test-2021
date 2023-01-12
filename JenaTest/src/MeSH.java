@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.URLEncoder;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
@@ -19,7 +18,7 @@ import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
 
-public class typekennsaku {
+public class MeSH {
 	
 	
 	static public void main(String[] args) throws FileNotFoundException{
@@ -33,7 +32,7 @@ public class typekennsaku {
 				long epochMilli = zdt.toInstant().toEpochMilli();
 				System.out.println("現在時刻 ： " + epochMilli);
 		//入力ファイル指定
-		File file = new File("input2/ennko-do.txt");
+		File file = new File("input2/mesh.txt");
 			
 		//ファイルの読み込み用のReaderの設定
 		BufferedReader br = new BufferedReader(	new InputStreamReader(new FileInputStream(file)));
@@ -41,10 +40,10 @@ public class typekennsaku {
 		// BufferedWriter writer=new BufferedWriter(new FileWriter("output.txt"));
 
 
-		 try {BufferedWriter writer=new BufferedWriter(new FileWriter("output2/enko-do.txt"));
+		 try {BufferedWriter writer=new BufferedWriter(new FileWriter("output2/mesh.txt"));
 			while(br.ready()) {
 			 String line = br.readLine(); //ファイルを1行ずつ読み込む
-			 String line2 = URLEncoder.encode(line, "UTF-8");
+			// String line2 = URLEncoder.encode(line, "UTF-8");
 			 //System.out.println(line2);
 			 
 			//クエリの作成
@@ -52,15 +51,13 @@ public class typekennsaku {
 					+ "PREFIX wd: <http://www.wikidata.org/entity/>"
 					+ "PREFIX wikibase: <http://wikiba.se/ontology#>"
 					+ "PREFIX bd: <http://www.bigdata.com/rdf#>" 
-					+"PREFIX schema: <http://schema.org/>"
-						+"select  ?o ?type ?typeLabel ?ewp  {"
-						+"?o wdt:P31 ?type."
-						+"<https://en.wikipedia.org/wiki/"+line2+"> schema:about ?o;"
-						+"	schema:inLanguage \"en\" ;"
-						+"	schema:isPartOf <https://en.wikipedia.org/> ;"
-						+"	schema:name ?ewp. "
-						+" SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }"
-						+" }";
+					+ "PREFIX schema: <http://schema.org/>"
+					+ "SELECT distinct ?s ?sLabel ?ID"
+					+ "	WHERE "
+					+ "	{"
+					+ "	  ?s wdt:P486 "+line+"."
+					+ "	  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }"
+					+ "	}";
 			Query query = QueryFactory.create(queryStr);
 
 			 
@@ -78,18 +75,20 @@ public class typekennsaku {
 			    
 		        	
 		        		 while(rs.hasNext()) {
+		        			
 		 		        	QuerySolution qs = rs.next();
-		 		        	org.apache.jena.rdf.model.Resource  res = qs.getResource("o");
-		 		        	org.apache.jena.rdf.model.Resource  res2 = qs.getResource("type");
-		 		        	org.apache.jena.rdf.model.Literal  res3 = qs.getLiteral("typeLabel");
-		 		        	org.apache.jena.rdf.model.Literal  res4 = qs.getLiteral("ewp");
+		 		        	org.apache.jena.rdf.model.Resource  res = qs.getResource("s");
+		 		        	//org.apache.jena.rdf.model.Resource  res2 = qs.getResource("type");
+		 		        	org.apache.jena.rdf.model.Literal  res3 = qs.getLiteral("sLabel");
+		 		        	org.apache.jena.rdf.model.Literal  res4 = qs.getLiteral("ID");
 		 		        	if(res!=null) {
 		 		        	
-		 		        		System.out.println(res+","+res2+","+res3+","+res4);
+		 		        		System.out.println(res+","+res3+","+res4);
 		 		        			        		
-		 		        		 writer.write(res+","+res2+","+res3+","+res4);
+		 		        		 writer.write(res+","+res3+","+res4);
 				        		 writer.newLine();
 		 		        	}
+		        			 
 		        }	
 		        qexec.close();   
 		      
