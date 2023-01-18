@@ -17,11 +17,11 @@ public class sampel1 {
 				+ "PREFIX wd: <http://www.wikidata.org/entity/>"
 				+ "PREFIX wikibase: <http://wikiba.se/ontology#>"
 				+ "PREFIX bd: <http://www.bigdata.com/rdf#>"
-				+ "SELECT distinct ?s ?sLabel \r\n"
+				+ "SELECT distinct ?s ?sLabel ?p \r\n"
 				+ "WHERE \r\n"
 				+ "{\r\n"
-				+ "  ?s wdt:P31/wdt:P279* wd:Q12136.\r\n"
-				+ "  SERVICE wikibase:label { bd:serviceParam wikibase:language \"ja,en\". }\r\n"
+				+ "  ?s ?p \"D003424\".\r\n"
+				+ "  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\r\n"
 				+ "}";
 		Query query = QueryFactory.create(queryStr);
 
