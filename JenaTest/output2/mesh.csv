@@ -124,4 +124,53 @@ http://www.wikidata.org/entity/Q55782041,Leukomelanoderma-infantilism-intellectu
 http://www.wikidata.org/entity/Q55783459,craniosynostosis syndrome, autosomal recessive@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
 http://www.wikidata.org/entity/Q55783458,homozygous 11P15-P14 deletion syndrome@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
 http://www.wikidata.org/entity/Q55999846,glomerulocystic kidney disease with hyperuricemia and Isosthenuria@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q929833,rare disease@en
-http://www.wikidata.org/entity/Q55999846,glomerulocystic kidney disease with hyperuricemia and Isosthenuria@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/enti
+http://www.wikidata.org/entity/Q55999846,glomerulocystic kidney disease with hyperuricemia and Isosthenuria@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q12136,disease@en
+http://www.wikidata.org/entity/Q55790528,sacral nerve plexus disease@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q12136,disease@en
+http://www.wikidata.org/entity/Q55790007,chromosome 13p duplication@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q55782329,spondyloepimetaphyseal dysplasia, Irapa type@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q55782329,spondyloepimetaphyseal dysplasia, Irapa type@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en
+http://www.wikidata.org/entity/Q55950182,aurocephalosyndactyly@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q12136,disease@en
+http://www.wikidata.org/entity/Q55950182,aurocephalosyndactyly@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en
+http://www.wikidata.org/entity/Q55783699,erythrocytosis, familial, 3@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q12136,disease@en
+http://www.wikidata.org/entity/Q55783699,erythrocytosis, familial, 3@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q929833,rare disease@en
+http://www.wikidata.org/entity/Q56002818,recurrent infections associated with rare immunoglobulin isotypes deficiency@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q929833,rare disease@en
+http://www.wikidata.org/entity/Q56002818,recurrent infections associated with rare immunoglobulin isotypes deficiency@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en
+http://www.wikidata.org/entity/Q56002818,recurrent infections associated with rare immunoglobulin isotypes deficiency@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q12136,disease@en
+http://www.wikidata.org/entity/Q55783428,Dimethylglycine dehydrogenase deficiency@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q12136,disease@en
+http://www.wikidata.org/entity/Q55783428,Dimethylglycine dehydrogenase deficiency@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q929833,rare disease@en
+http://www.wikidata.org/entity/Q55783428,Dimethylglycine dehydrogenase deficiency@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en
+http://www.wikidata.org/entity/Q55789858,congenital absence of septum pellucidum@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q55781940,methylcobalamin deficiency type cblE@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q12136,disease@en
+http://www.wikidata.org/entity/Q55781940,methylcobalamin deficiency type cblE@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q929833,rare disease@en
+http://www.wikidata.org/entity/Q55781940,methylcobalamin deficiency type cblE@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en
+http://www.wikidata.org/entity/Q55999657,thyroid carcinoma, nonmedullary, with or without cell oxyphilia@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q104477483,human disease@en
+http://www.wikidata.org/entity/Q17321237,Eronen-Somer-Gustafsson syndrome@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en
+http://www.wikidata.org/entity/Q17321237,Eronen-Somer-Gustafsson syndrome@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q3311537,hereditary disorder@en
+http://www.wikidata.org/entity/Q55780371,blepharoptosis-myopia-ectopia lentis syndrome@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en
+http://www.wikidata.org/entity/Q55780371,blepharoptosis-myopia-ectopia lentis syndrome@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q12136,disease@en
+http://www.wikidata.org/entity/Q55783206,multiple epiphyseal dysplasia, Lowry type@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en
+http://www.wikidata.org/entity/Q55783206,multiple epiphyseal dysplasia, Lowry type@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q55783661,progressive external ophthalmoplegia with mitochondrial Dna deletions, autosomal dominant 3@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q929833,rare disease@en
+http://www.wikidata.org/entity/Q55783661,progressive external ophthalmoplegia with mitochondrial Dna deletions, autosomal dominant 3@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q55783661,progressive external ophthalmoplegia with mitochondrial Dna deletions, autosomal dominant 3@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q12136,disease@en
+http://www.wikidata.org/entity/Q55780383,brachydactyly, type E, with atrial septal defect, Type 2@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q55999570,nephrolithiasis, X-linked recessive, with renal failure@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q929833,rare disease@en
+http://www.wikidata.org/entity/Q55999570,nephrolithiasis, X-linked recessive, with renal failure@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q12136,disease@en
+http://www.wikidata.org/entity/Q55999726,familial hyperreninemic hypoaldosteronism type 2@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en
+http://www.wikidata.org/entity/Q55784184,developmental delay due to methylmalonate semialdehyde dehydrogenase deficiency@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q12136,disease@en
+http://www.wikidata.org/entity/Q55784184,developmental delay due to methylmalonate semialdehyde dehydrogenase deficiency@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q929833,rare disease@en
+http://www.wikidata.org/entity/Q55784184,developmental delay due to methylmalonate semialdehyde dehydrogenase deficiency@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en
+http://www.wikidata.org/entity/Q55782337,ataxia-tapetoretinal degeneration syndrome@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en
+http://www.wikidata.org/entity/Q55782337,ataxia-tapetoretinal degeneration syndrome@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q55783602,spondyloepimetaphyseal dysplasia, matrilin-3 type@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q929833,rare disease@en
+http://www.wikidata.org/entity/Q55783602,spondyloepimetaphyseal dysplasia, matrilin-3 type@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en
+http://www.wikidata.org/entity/Q55783602,spondyloepimetaphyseal dysplasia, matrilin-3 type@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q55783602,spondyloepimetaphyseal dysplasia, matrilin-3 type@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q12136,disease@en
+http://www.wikidata.org/entity/Q55790017,chromosome 4 short arm deletion@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q55782051,Lymphokine deficiency@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q18123741,infectious disease@en
+http://www.wikidata.org/entity/Q55783642,tibia, bowing of, with Pseudarthrosis and pectus excavatum@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q55789942,brunoni syndrome@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q3235224,Force Heretic: Refugee@en,http://www.wikidata.org/prop/direct/P8295,http://www.wikidata.org/entity/Q7725634,literary work@en
+http://www.wikidata.org/entity/Q55790016,chromosome 3 duplication syndrome@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q55783282,spondyloepimetaphyseal dysplasia, Shohat type@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q55788864,developmental defect during embryogenesis@en
+http://www.wikidata.org/entity/Q55783282,spondyloepimetaphyseal dysplasia, Shohat type@en,http://www.wikidata.org/prop/direct/P486,http://www.wikidata.org/entity/Q112193867,class of disease@en

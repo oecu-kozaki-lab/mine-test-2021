@@ -33,15 +33,16 @@ public class MeSH {
 				System.out.println("現在時刻 ： " + epochMilli);
 		
 				//入力ファイル指定
-		File file = new File("input2/mesh.txt");
-			
+		//File file = new File("input2/mesh.txt");
+		File file = new File("input2/DSont.txt");
 		//ファイルの読み込み用のReaderの設定
 		BufferedReader br = new BufferedReader(	new InputStreamReader(new FileInputStream(file)));
 	 
 		// BufferedWriter writer=new BufferedWriter(new FileWriter("output.txt"));
 
 
-		 try {BufferedWriter writer=new BufferedWriter(new FileWriter("output2/mesh.csv"));
+		 try {//BufferedWriter writer=new BufferedWriter(new FileWriter("output2/mesh2.csv"));
+		 BufferedWriter writer=new BufferedWriter(new FileWriter("output2/DSont.csv"));
 			while(br.ready()) {
 			 String line = br.readLine(); //ファイルを1行ずつ読み込む
 			// String line2 = URLEncoder.encode(line, "UTF-8");
@@ -53,7 +54,8 @@ public class MeSH {
 					+ "PREFIX wd: <http://www.wikidata.org/entity/>"
 					+ "PREFIX wikibase: <http://wikiba.se/ontology#>"
 					+ "PREFIX bd: <http://www.bigdata.com/rdf#>"
-					+ "SELECT distinct ?s ?sLabel ?p ?type ?typeLabel \r\n"
+					//+ "SELECT distinct ?s ?sLabel ?p ?type ?typeLabel \r\n"
+					+ "SELECT distinct ?s  ?p ?type ?typeLabel \r\n"
 					+ "WHERE \r\n"
 					+ "{\r\n"
 					+ "  ?s ?p \""+line+"\".\r\n"
@@ -88,15 +90,16 @@ public class MeSH {
 		        			
 		 		        	QuerySolution qs = rs.next();
 		 		        	org.apache.jena.rdf.model.Resource  res = qs.getResource("s");
-		 		        	org.apache.jena.rdf.model.Literal  res2 = qs.getLiteral("sLabel");
+		 		        	//org.apache.jena.rdf.model.Literal  res2 = qs.getLiteral("sLabel");
 		 		        	org.apache.jena.rdf.model.Resource  res3 = qs.getResource("p");
 		 		        	org.apache.jena.rdf.model.Resource  res4 = qs.getResource("type");
 		 		        	org.apache.jena.rdf.model.Literal  res5 = qs.getLiteral("typeLabel");
 		 		        	if(res!=null) {
 		 		        	
-		 		        		System.out.println(res+","+res2+","+res3+","+res4+","+res5);
-		 		        			        		
-		 		        		 writer.write(res+","+""+res2+""+","+res3+","+res4+","+res5);
+		 		        		//System.out.println(res+","+res2+","+res3+","+res4+","+res5);
+		 		        		System.out.println(res+","+res3+","+res4+","+res5);        		
+		 		        		 //writer.write(res+","+""+res2+""+","+res3+","+res4+","+res5);
+		 		        		 writer.write(res+","+res3+","+res4+","+res5);
 		 		        		 writer.newLine();
 		 		        	}
 		 		        	else {
